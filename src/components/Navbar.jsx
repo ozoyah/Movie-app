@@ -8,16 +8,15 @@ const Navbar = () => {
         <Flex justifyContent={"space-between "}>
           <NavLink to="/Home">
             <Box
-              fontSize={"2xl"}
-              fontWeight={"bold"}
-              color={"#FADA7A"}
-              letterSpacing={"widest"}
+              fontSize={"3xl"}
+              fontWeight={"700"}
+              color={"#FFF085"}
               fontFamily={"mono"}
             >
-              ZedFlix
+              ZEDFLIX
             </Box>
           </NavLink>
-          <Flex gap={4}>
+          <Flex gap={4} alignItems={"center"}>
             <NavLink
               to="/"
               style={({ isActive }) => ({
