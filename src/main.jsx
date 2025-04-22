@@ -3,8 +3,11 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "./components/ui/provider";
 import App from "./App.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Movies from "./pages/movies/Movies";
 import Home from "./pages/Home";
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -33,8 +36,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider>
-      <RouterProvider router={router} />
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider>
+        <RouterProvider router={router} />
+      </Provider>
+    </QueryClientProvider>
   </StrictMode>
 );
